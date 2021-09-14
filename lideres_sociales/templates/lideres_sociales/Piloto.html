@@ -1,0 +1,116 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'mpl/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Preguntas (P)" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align = "justify" >
+                
+            <b>Estamos interesados en conocer qué información le entregó el vídeo y qué emociones despertó en usted. 
+                Califique en una escala de 1 a 10 hasta qué punto el vídeo le permitió conectarse con las siguientes situaciones.</b>
+                <br> 
+                Tenga en cuenta “1” implica que la afirmación NO describe lo que el vídeo despertó en usted, 
+                y “10” que la situación SÍ describe perfectamente sus sentimientos y conocimientos en relación a la noticia que ha visto.<br><br>
+
+                <table class="table" style="text-align:center">
+                <td>
+                    <td><b>La situación NO describe lo sentido y observado a través del vídeo.</b></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td><b>La situación SÍ describe perfectamente lo sentido y observado a través del vídeo</b></td>
+                </td>
+                <tr>
+                    <th>{{ form.afirmacion_1EMP.label }}</th>
+                    <td>{% for choice in form.afirmacion_1EMP %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_3EN.label }}</th>
+                    <td>{% for choice in form.afirmacion_3EN %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_2EMP.label }}</th>
+                    <td>{% for choice in form.afirmacion_2EMP %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_5EEmp.label }}</th>
+                    <td>{% for choice in form.afirmacion_5EEmp %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_7Inf.label }}</th>
+                    <td>{% for choice in form.afirmacion_7Inf %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_4EN.label }}</th>
+                    <td>{% for choice in form.afirmacion_4EN %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_9LB.label }}</th>
+                    <td>{% for choice in form.afirmacion_9LB %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_6EEmp.label }}</th>
+                    <td>{% for choice in form.afirmacion_6EEmp %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_8Inf.label }}</th>
+                    <td>{% for choice in form.afirmacion_8Inf %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.afirmacion_10LB.label }}</th>
+                    <td>{% for choice in form.afirmacion_10LB %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                </table>
+
+
+        </p>
+    </div>
+{% next_button %}
+{% endblock %}

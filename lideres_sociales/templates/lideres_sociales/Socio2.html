@@ -1,0 +1,114 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'mpl/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "CUESTIONARIO" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align = "justify" >
+            
+            <b>Por favor, indique en qué medida está de acuerdo o no con cada una de las siguientes 10
+            afirmaciones.</b>
+            <table class="table" style="text-align:center">
+            <td>
+                <td></td><td>Fuertemente en desacuerdo</td><td>En desacuerdo</td><td>Ligeramente en desacuerdo</td><td>Ni de acuerdo, ni en desacuerdo</td><td>De acuerdo</td><td>Fuertemente de acuerdo</td>
+            </td>
+            <tr>
+                <th>{{ form.conseguir_esfuerzo.label }}</th>
+                <td>{% for choice in form.conseguir_esfuerzo %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.planes_termino.label }}</th>
+                <td>{% for choice in form.planes_termino %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.juego_suerte.label }}</th>
+                <td>{% for choice in form.juego_suerte %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.propongo_aprender.label }}</th>
+                <td>{% for choice in form.propongo_aprender %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.mayores_logros.label }}</th>
+                <td>{% for choice in form.mayores_logros %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.establecer_metas.label }}</th>
+                <td>{% for choice in form.establecer_metas %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.competencia_excelencia.label }}</th>
+                <td>{% for choice in form.competencia_excelencia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.salir_adelante.label }}</th>
+                <td>{% for choice in form.salir_adelante %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.comparar_calificaciones.label }}</th>
+                <td>{% for choice in form.comparar_calificaciones %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.empeno_trabajo.label }}</th>
+                <td>{% for choice in form.empeno_trabajo %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            </table>
+            <br>
+            <p>____________________________________________________________________________________________</p>
+            <br>
+            
+        </p>
+    </div>
+{% next_button %}
+{% endblock %}

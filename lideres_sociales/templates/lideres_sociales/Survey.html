@@ -1,0 +1,268 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'lideres_sociales/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Cuestionario" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align = "justify" >
+            <b>Por favor califique de 1 a 10 qué tanto se identifica con las siguientes situaciones.</b>
+                <br>Tenga en cuenta que 1 es "Nada Identificado" y 10 es sentirse "Totalmente identificado"
+                <table class="table" style="text-align:center">
+                <td>
+                    <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                </td>
+                <tr>
+                    <th>{{ form.frase_1.label }}</th>
+                    <td>{% for choice in form.frase_1 %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.frase_2.label }}</th>
+                    <td>{% for choice in form.frase_2 %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.frase_3.label }}</th>
+                    <td>{% for choice in form.frase_3 %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.frase_4.label }}</th>
+                    <td>{% for choice in form.frase_4 %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.frase_5.label }}</th>
+                    <td>{% for choice in form.frase_5 %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.frase_6.label }}</th>
+                    <td>{% for choice in form.frase_6 %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{{ form.frase_7.label }}</th>
+                    <td>{% for choice in form.frase_7 %}
+                        <td>{{ choice.tag}}</td>
+                        {% endfor %}
+                    </td>
+                </tr>
+                </table>  
+                <br>      
+                <br>
+                <br>
+                <b>___________________________________________________________________________________________________</b>
+                <br>    
+            
+            <b>De acuerdo con el vídeo que vio anteriormente, por favor seleccione qué tan de acuerdo
+            se siente con las siguientes afirmaciones.</b>
+            <table class="table" style="text-align:center">
+            <td>
+                <td></td><td>Totalmente en desacuerdo</td><td>En desacuerdo</td><td>Ni de acuerdo, ni en desacuerdo</td><td>De acuerdo</td><td>Totalmente de acuerdo</td>
+            </td>
+            <tr>
+                <th>{{ form.calidad_noticia.label }}</th>
+                <td>{% for choice in form.calidad_noticia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.informacion_noticia.label }}</th>
+                <td>{% for choice in form.informacion_noticia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_incompleta.label }}</th>
+                <td>{% for choice in form.noticia_incompleta %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_credibilidad.label }}</th>
+                <td>{% for choice in form.noticia_credibilidad %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_tiempo.label }}</th>
+                <td>{% for choice in form.noticia_tiempo %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_calidad.label }}</th>
+                <td>{% for choice in form.noticia_calidad %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_imagenes.label }}</th>
+                <td>{% for choice in form.noticia_imagenes %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+
+                <th>{{ form.noticia_publico_general.label }}</th>
+                <td>{% for choice in form.noticia_publico_general %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_informacion_importante.label }}</th>
+                <td>{% for choice in form.noticia_informacion_importante %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_informacion_importante_politicos.label }}</th>
+                <td>{% for choice in form.noticia_informacion_importante_politicos %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_lenguaje.label }}</th>
+                <td>{% for choice in form.noticia_lenguaje %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_lideres_similar.label }}</th>
+                <td>{% for choice in form.noticia_lideres_similar %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            </table>
+            <br>       
+      
+            <br>
+            <br>
+            <b>___________________________________________________________________________________________________</b>
+            <br>
+            <b>Por favor, respecto a la noticia vista anteriormente, conteste las siguientes preguntas
+            eligiendo la opción con la que se sienta más de acuerdo.</b>
+            <table class="table" style="text-align:left">
+            <td>
+                <td></td><td>Sí</td><td>No</td>
+            </td>
+            <tr>
+                <th>{{ form.noticia_impactante.label }}</th>
+                <td>{% for choice in form.noticia_impactante %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_angustiante.label }}</th>
+                <td>{% for choice in form.noticia_angustiante %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.noticia_violenta.label }}</th>
+                <td>{% for choice in form.noticia_violenta %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.lider_necesario.label }}</th>
+                <td>{% for choice in form.lider_necesario %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.gobierno_responsable_lideres.label }}</th>
+                <td>{% for choice in form.gobierno_responsable_lideres %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.conflicto_armado_cesado.label }}</th>
+                <td>{% for choice in form.conflicto_armado_cesado %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <br>
+            </table>
+            <br>
+            <b>____________________________________________________________________________________________________</b>
+            <br>
+            <b>Por favor, seleccione qué tan de acuerdo
+                 o en desacuerdo está con las siguientes afirmaciones.</b>
+            <table class="table" style="text-align:center">
+            <td>
+                <td></td><td>Totalmente en desacuerdo</td><td>En desacuerdo</td><td>Ni de acuerdo, ni en desacuerdo</td><td>De acuerdo</td><td>Totalmente de acuerdo</td>
+            </td>
+            <tr>
+                <th>{{ form.victima_responsable.label }}</th>
+                <td>{% for choice in form.victima_responsable %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.siente_compasion.label }}</th>
+                <td>{% for choice in form.siente_compasion %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            </table>
+            <br>
+            
+        </p>
+
+    </div>
+{% next_button %}
+{% endblock %}

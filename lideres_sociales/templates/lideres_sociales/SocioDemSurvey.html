@@ -1,0 +1,97 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'lideres_sociales/css/custom.css' %}" rel="stylesheet"/>
+    
+{% endblock %}
+
+
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "CUESTIONARIO" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align = "justify" >
+                
+            <b>A continuación, usted va a encontrar varias preguntas relacionadas con usted.
+            Por favor lea y especifique sus respuestas de acuerdo a lo indicado.</b><br><br>
+
+            <b>Confidencialidad:</b> La información que usted brinda en esta encuesta es confidencial y anónima. 
+            Dicha información será utilizada con propósitos académicos y será protegida de acuerdo con la 
+            Ley Estatutaria 1581 de 2012 de protección a los datos personales.<br>
+
+            {% formfield player.edad %}
+            {% formfield player.ciudad %}
+            {% formfield player.estrato %}
+            {% formfield player.estado_civil %}
+            {% formfield player.numero_hijos %}
+            {% formfield player.identifica_cultura %}
+            {% formfield player.identifica_religion %}
+            {% formfield player.nivel_estudios %}
+        
+            <br>
+            <p>____________________________________________________________________________________________</p>
+            <br>
+            <br>Por favor, califique en un escala de 1 a 10 su disposición a asumir riesgos en general, siendo 1 para nada dispuesto y 10 completamente dispuesto
+            <br>
+            <br>
+            <table class="table">
+            <td>
+                <td>Para nada dispuesto</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>Totalmente Dispuesto</td>
+            </td>
+            <tr>
+                <th>{{ form.disposicion_riesgos.label }}</th>
+                <td>{% for choice in form.disposicion_riesgos %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            </table>
+            <br>
+            <p>____________________________________________________________________________________________</p>
+            <br>
+            <br>Hoy en día cuando se habla de tendencias políticas, mucha gente habla de aquellos que simpatizan más con la izquierda o con la derecha. 
+            Según el sentido que tengan para usted los términos 'izquierda' y 'derecha' cuando piensa sobre su punto de vista político, 
+            ¿dónde se encontraría usted en esta escala?
+            <br>
+            <br>
+            <table class="table" style="text-align:left">
+            <td>
+                <td>IZQUIERDA</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>DERECHA</td>
+            </td>
+            <tr>
+                <th>{{ form.tendencia_politica.label }}</th>
+                <td>{% for choice in form.tendencia_politica %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            </table>
+            <br>
+            <br>
+            <p>_________________________________________________________________________________________________________</p>
+            {% formfield player.identifica_partido %}
+            <br>
+            <p>____________________________________________________________________________________________</p>
+            
+        </p>
+    </div>
+{% next_button %}
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'mpl/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "CUESTIONARIO" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align = "justify" >
+            <b>Lea las siguientes preguntas y escoja la opción que mejor describa su situación.</b>
+            <table class="table" style="text-align:center">
+            <td>
+                <td></td><td>Nunca</td><td>Una vez</td><td>Entre 2 y 3 veces</td><td>Más de 3 veces</td><td>No sabe</td>
+            </td>
+            <tr>
+                <th>{{ form.victima_violencia_farc_eln.label }}</th>
+                <td>{% for choice in form.victima_violencia_farc_eln %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.victima_violencia_auc_otros.label }}</th>
+                <td>{% for choice in form.victima_violencia_auc_otros %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.victima_violencia_otros_delicuencia.label }}</th>
+                <td>{% for choice in form.victima_violencia_otros_delicuencia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.victima_no_violencia.label }}</th>
+                <td>{% for choice in form.victima_no_violencia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.familia_victima_farc_eln.label }}</th>
+                <td>{% for choice in form.familia_victima_farc_eln %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.familia_victima_auc_otros.label }}</th>
+                <td>{% for choice in form.familia_victima_auc_otros %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.familia_victima_otros_delincuencia.label }}</th>
+                <td>{% for choice in form.familia_victima_otros_delincuencia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.familia_victima_no_violencia.label }}</th>
+                <td>{% for choice in form.familia_victima_no_violencia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            </table>
+            <br>
+            <p>____________________________________________________________________________________________</p>
+           
+        </p>
+    </div>
+{% next_button %}
+{% endblock %}

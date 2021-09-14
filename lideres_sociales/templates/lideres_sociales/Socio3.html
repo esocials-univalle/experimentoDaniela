@@ -1,0 +1,96 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'mpl/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "CUESTIONARIO" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p align = "justify" >
+            
+            <b>Por favor, indique en qué medida está de acuerdo o no con cada una de las siguientes 10
+            afirmaciones.</b>
+            <table class="table" style="text-align:center">
+            <td>
+                <td></td><td>Fuertemente en desacuerdo</td><td>En desacuerdo</td><td>Ligeramente en desacuerdo</td><td>Ni de acuerdo, ni en desacuerdo</td><td>De acuerdo</td><td>Fuertemente de acuerdo</td>
+            </td>
+            <tr>
+                <th>{{ form.alcanzar_objetivos.label }}</th>
+                <td>{% for choice in form.alcanzar_objetivos %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.cumplir_tareas.label }}</th>
+                <td>{% for choice in form.cumplir_tareas %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.obtener_resultados.label }}</th>
+                <td>{% for choice in form.obtener_resultados %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.exito_esfuerzo.label }}</th>
+                <td>{% for choice in form.exito_esfuerzo %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.superar_desafios.label }}</th>
+                <td>{% for choice in form.superar_desafios %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.confianza_tareas.label }}</th>
+                <td>{% for choice in form.confianza_tareas %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.tareas_excelencia.label }}</th>
+                <td>{% for choice in form.tareas_excelencia %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ form.tareas_dificiles.label }}</th>
+                <td>{% for choice in form.tareas_dificiles %}
+                    <td>{{ choice.tag}}</td>
+                    {% endfor %}
+                </td>
+            </tr>
+            </table>
+        </p>
+    </div>
+{% next_button %}
+{% endblock %}

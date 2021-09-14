@@ -1,0 +1,70 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Para Terminar...
+{% endblock %}
+
+{% block content %}
+
+
+<p>
+    Esta actividad tiene una remuneración de {{Constants.endowment}}.
+    Usted ha decidido hacer una donación de {{player.contribution}}.
+    Dado lo anterior, usted recibirá una remuneración total de <b>{{ player.payoff }}.</b>
+
+    <br>
+    <br>
+    <br>
+    El enlace para apoyar la iniciativa de ley con su firma es: 
+    
+    {% if player.tratamiento == 'Empatia' %}
+        <a href="http://chng.it/Wxr6F5wLGs" target="_blank">http://chng.it/Wxr6F5wLGs</a>.
+    {% elif player.tratamiento == 'Empirico' %}
+        <a href="http://chng.it/qyNjPcBL58" target="_blank">http://chng.it/qyNjPcBL58</a>.
+    {% elif player.tratamiento == 'Informacional' %}
+        <a href=" http://chng.it/vGL5m4dWBc" target="_blank"> http://chng.it/vGL5m4dWBc</a>.
+    {% elif player.tratamiento == 'Linea_base' %}
+        <a href="http://chng.it/wSVBR2cCrs" target="_blank">http://chng.it/wSVBR2cCrs</a>.
+    {% endif %}
+    
+    
+    <br>
+    <br>
+    <br>
+
+    <b>Recordatorio Nequi</b>
+    <br>Recuerde que podemos depositar el dinero <b>SÓLO</b> a cuentas Nequi. 
+    <br>Si usted no nos ha enviado su certificado bancario Nequi, por favor envíelo en los próximos 3 días hábiles. 
+    De lo contario, se vencerán los términos de la actividad y no podremos pagarle.
+    <br>Incluya en su mensaje el número de identificación temporal, que es <b>{{player.num_temporal}}</b>
+    
+    <br>
+    <br>Necesitamos el número de identificación temporal y el certificado para poder pagarle. 
+    <br>Una vez nos envíe la información, le haremos el pago en los siguientes 7 días hábiles. 
+    <br>Puede enviarnos la información a nuestro correo electrónico investigacion.esocials@correounivalle.edu.co o a nuestro Whatsapp 3167607211.
+   
+    <br>
+    <br>
+    <b>¿Cómo abrir la cuenta Nequi?</b> 
+    <br>Descargue la aplicación Nequi en su celular y genere una cuenta. 
+    <br>En este video podrás saber cómo hacerlo: <a href="https://www.youtube.com/watch?v=GGvFtEVOsgc" target="_blank">https://www.youtube.com/watch?v=GGvFtEVOsgc</a>
+    <br>
+    <br>
+    <b>¿Cómo descargar el certificado?</b> 
+    <br>Descargue el certificado ingresando a nequi.co. 
+    <br>En este video podrá saber cómo:<a href="https://www.youtube.com/watch?v=_c6V5ieFq1w" target="_blank">https://www.youtube.com/watch?v=_c6V5ieFq1w</a> 
+    <br>
+    <br>
+    <b>Agradecemos su participación en esta actividad. </b>
+
+
+
+
+
+</p>
+
+    {% next_button %}
+{% endblock %}
+
+
